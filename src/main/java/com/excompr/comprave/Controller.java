@@ -56,4 +56,20 @@ public class Controller {
         }
         return result;
     }
+    @GetMapping("/listavini")
+    public void listavini()
+    {
+        for (Vino item: vino)
+        {
+            System.out.println(item.getNome() + " " + item.getAzienda_produttrice() + " " + item.getTipologia() + " " + item.getAnnata());
+        }
+    }
+    @GetMapping("/stampaacquisti")
+    public void stampaacquisti()
+    {
+        for (Acquisto item: acquisto)
+        {
+            System.out.println(item.getCfu() + " " + item.getNomev());
+        }
+    }
 }
