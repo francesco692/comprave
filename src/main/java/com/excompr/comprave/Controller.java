@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Controller {
     ArrayList<Utente> persone = new ArrayList<>();
     ArrayList<Vino> vino = new ArrayList<>();
+    ArrayList<Acquisto> acquisto = new ArrayList<>();
     @GetMapping("/insertutente")
     String insert(@RequestParam String nome, @RequestParam String cognome, @RequestParam String cf, @RequestParam int eta)
     {
@@ -22,5 +23,37 @@ public class Controller {
     {
         vino.add(new Vino(nome,azienda_produttrice,tipologia,annata));
         return "vino inserito con successo";
+    }
+    @GetMapping("/acquisto")
+    boolean acqui(@RequestParam String cfu, @RequestParam String nomev)
+    {
+        boolean result = true;
+        boolean result1 = true;
+        boolean result2 = true;
+        for(Utente item: persone)
+        {
+            if (item.getCf().equals(cfu))
+            {
+                result1 = true;
+                break;
+            }
+            else
+                result1 = false;
+        }
+        for(Vino item1: vino)
+        {
+            if (item1.getNome().equals(nomev))
+            {
+                result2 = true;
+                break;
+            }
+            else
+                result2 = false;
+        }
+        if(result1 && result2)
+        {
+            acquisto.add(new Acquisto(cfu,nomev));
+        }
+        return result;
     }
 }
