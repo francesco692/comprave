@@ -72,4 +72,69 @@ public class Controller {
             System.out.println(item.getCfu() + " " + item.getNomev());
         }
     }
+    @GetMapping("/stampavinonome")
+    public void stampavinonome(@RequestParam String nome)
+    {
+        for (Vino item: vino)
+        {
+            if(item.getNome().equals(nome))
+            {
+                System.out.println(item.getNome() + " " + item.getAzienda_produttrice() + " " + item.getTipologia() + " " + item.getAnnata());
+                break;
+            }
+            else
+            {
+                System.out.println("vino non trovato");
+            }
+        }
+    }
+    @GetMapping("/stampavinoaz")
+    public void stampavinoaz(@RequestParam String azienda)
+    {
+        for (Vino item: vino)
+        {
+            if(item.getAzienda_produttrice().equals(azienda))
+            {
+                System.out.println(item.getNome() + " " + item.getAzienda_produttrice() + " " + item.getTipologia() + " " + item.getAnnata());
+                break;
+            }
+            else
+            {
+                System.out.println("vino non trovato");
+            }
+        }
+    }
+    @GetMapping("/stampavinotipologia")
+    public void stampavinotipologia(@RequestParam String tipologia)
+    {
+        for (Vino item: vino)
+        {
+            if(item.getTipologia().equals(tipologia))
+            {
+                System.out.println(item.getNome() + " " + item.getAzienda_produttrice() + " " + item.getTipologia() + " " + item.getAnnata());
+                break;
+            }
+            else
+            {
+                System.out.println("vino non trovato");
+            }
+        }
+    }
+    @GetMapping("/stampavinoannata")
+    public void stampavinoannata(@RequestParam int annata)
+    {
+        for (Vino item: vino)
+        {
+            if(item.getAnnata() == annata)
+            {
+                System.out.println(item.getNome() + " " + item.getAzienda_produttrice() + " " + item.getTipologia() + " " + item.getAnnata());
+                break;
+            }
+            else
+            {
+                System.out.println("vino non trovato");
+            }
+        }
+    }
+
 }
