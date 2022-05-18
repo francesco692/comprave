@@ -1,26 +1,32 @@
 package com.excompr.comprave;
 
 public class Vino {
-    private String marca;
-    private String luogo_produzione;
-    private String gradazione;
-    Vino(String marca, String luogo_produzione, String gradazione)
+    private String nome;
+    private String azienda_produttrice;
+    private String tipologia;
+    private int annata;
+    Vino(String nome, String azienda_produttrice, String tipologia, int annata)
     {
-        this.marca = marca;
-        this.luogo_produzione = luogo_produzione;
-        this.gradazione = gradazione;
+        this.nome = nome;
+        this.azienda_produttrice = azienda_produttrice;
+        this.tipologia = tipologia;
+        this.annata = annata;
     }
 
-    public String getMarca()
+    public String getNome()
     {
-        return marca;
+        return nome;
     }
-    public String getLuogo_produzione()
+    public String getAzienda_produttrice()
     {
-        return luogo_produzione;
+        return azienda_produttrice;
     }
-    public String getGradazione()
+    public String getTipologia()
     {
-        return gradazione;
+        return tipologia;
+    }
+    public int getAnnata()
+    {
+        return annata;
     }
 }

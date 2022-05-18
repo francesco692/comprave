@@ -18,9 +18,9 @@ public class Controller {
         return "utente inserito con successo";
     }
     @GetMapping("/insertvino")
-    String insertv(@RequestParam String marca, @RequestParam String luogo_produzione, @RequestParam String gradazione)
+    String insertv(@RequestParam String nome, @RequestParam String azienda_produttrice, @RequestParam String tipologia, @RequestParam int annata)
     {
-        vino.add(new Vino(marca,luogo_produzione,gradazione));
+        vino.add(new Vino(nome,azienda_produttrice,tipologia,annata));
         return "vino inserito con successo";
     }
 }
